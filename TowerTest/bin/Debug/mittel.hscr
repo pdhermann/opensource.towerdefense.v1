@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mittel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Punkte>
+    <int>97530450</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+    <int>0</int>
+  </Punkte>
+  <Namen>
+    <string>Magnus</string>
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+    <string xsi:nil="true" />
+  </Namen>
+  <List>
+    <anyType xsi:type="xsd:string">1. Magnus: 97530450</anyType>
+    <anyType xsi:type="xsd:string">2. </anyType>
+    <anyType xsi:type="xsd:string">3. </anyType>
+    <anyType xsi:type="xsd:string">4. </anyType>
+    <anyType xsi:type="xsd:string">5. </anyType>
+    <anyType xsi:type="xsd:string">6. </anyType>
+    <anyType xsi:type="xsd:string">7. </anyType>
+    <anyType xsi:type="xsd:string">8. </anyType>
+    <anyType xsi:type="xsd:string">9. </anyType>
+    <anyType xsi:type="xsd:string">10. </anyType>
+    <anyType xsi:type="xsd:string">11. </anyType>
+    <anyType xsi:type="xsd:string">12. </anyType>
+    <anyType xsi:type="xsd:string">13. </anyType>
+    <anyType xsi:type="xsd:string">14. </anyType>
+    <anyType xsi:type="xsd:string">15. </anyType>
+    <anyType xsi:type="xsd:string">16. </anyType>
+    <anyType xsi:type="xsd:string">17. </anyType>
+    <anyType xsi:type="xsd:string">18. </anyType>
+    <anyType xsi:type="xsd:string">19. </anyType>
+  </List>
+</Mittel>

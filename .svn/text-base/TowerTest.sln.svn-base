@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerTest", "TowerTest\TowerTest.csproj", "{D02E0C06-7214-4DC3-9182-163F1268B84E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "TowerDefense", "TowerDefense\TowerDefense.vdproj", "{597BF01D-72F8-49C4-A6D8-FFE22FF83BED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D02E0C06-7214-4DC3-9182-163F1268B84E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D02E0C06-7214-4DC3-9182-163F1268B84E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D02E0C06-7214-4DC3-9182-163F1268B84E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D02E0C06-7214-4DC3-9182-163F1268B84E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{597BF01D-72F8-49C4-A6D8-FFE22FF83BED}.Debug|Any CPU.ActiveCfg = Debug
+		{597BF01D-72F8-49C4-A6D8-FFE22FF83BED}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

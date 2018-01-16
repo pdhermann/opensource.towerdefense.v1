@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="TowerTest">
+</Property><Property Name="Projektmappendatei" Value="F:\TowerDefense\TowerTest.sln">
+</Property><Property Name="Date" Value="Donnerstag, 12. Februar 2009">
+</Property><Property Name="Time" Value="11:05">
+</Property></Properties><Event ErrorLevel="0" Project="TowerTest" Source="TowerTest\TowerTest.csproj" Description="Projekt erfolgreich konvertiert">
+</Event><Event ErrorLevel="3" Project="TowerTest" Source="TowerTest\TowerTest.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="TowerTest.sln" Description="Die Projektmappe wurde erfolgreich konvertiert.">
+</Event><Event ErrorLevel="3" Project="" Source="TowerTest.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="TowerTest" Source="TowerTest\TowerTest.csproj" Description="Überprüfung abgeschlossen: Aktualisierung von Projektdateien nicht erforderlich.">
+</Event></UpgradeLog>

@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<ArrayOfAnyType xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <anyType xsi:type="Point">
+    <X>38</X>
+    <Y>90</Y>
+  </anyType>
+  <anyType xsi:type="Point">
+    <X>40</X>
+    <Y>470</Y>
+  </anyType>
+  <anyType xsi:type="Point">
+    <X>418</X>
+    <Y>470</Y>
+  </anyType>
+  <anyType xsi:type="Point">
+    <X>418</X>
+    <Y>295</Y>
+  </anyType>
+  <anyType xsi:type="Point">
+    <X>183</X>
+    <Y>295</Y>
+  </anyType>
+  <anyType xsi:type="Point">
+    <X>183</X>
+    <Y>93</Y>
+  </anyType>
+  <anyType xsi:type="Point">
+    <X>591</X>
+    <Y>97</Y>
+  </anyType>
+  <anyType xsi:type="Point">
+    <X>661</X>
+    <Y>157</Y>
+  </anyType>
+  <anyType xsi:type="Point">
+    <X>661</X>
+    <Y>430</Y>
+  </anyType>
+  <anyType xsi:type="Point">
+    <X>594</X>
+    <Y>480</Y>
+  </anyType>
+  <anyType xsi:type="Point">
+    <X>476</X>
+    <Y>481</Y>
+  </anyType>
+  <anyType xsi:type="Point">
+    <X>476</X>
+    <Y>133</Y>
+  </anyType>
+</ArrayOfAnyType>

@@ -1,0 +1,673 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using System.Collections;
+using M=System.Media;
+using System.IO;
+
+/// Alpha-Version 0.01
+namespace TowerTest
+{
+    public partial class Form1 : Form
+    {
+        Pen pen;
+        Rectangle rect;
+        int turm;
+        private ArrayList a;
+        public ArrayList geschoss;
+        public ArrayList Einheiten;
+        public ArrayList M_EditorRoute;
+        public ArrayList M_PressedButtons;
+        bool painttower = false;
+        bool RangeChanged = false;
+        bool shoot = false;
+        bool EditorFirstStart = true;
+        bool Mouserup = false;
+        Spielfeld M_Spielfeld;
+        bool Mouseup = false;
+        Point Mousepostion;
+        Turm M_SelectedTurm;
+        int M_IndexofSelectedTurm;
+        Turm M_NEW;
+        bool Pause = false;
+<<<<<<< .mine
+        Einstellungen M_Einstellungen;
+=======
+        M.SoundPlayer sound;
+        string[] Sounds;
+>>>>>>> .r9
+        //M.MediaPlayer Mplayer;
+        
+
+
+        public Form1()
+        {
+            //Mplayer = new MediaPlayer.MediaPlayerClass();
+            //Mplayer.EndOfStream += new MediaPlayer._MediaPlayerEvents_EndOfStreamEventHandler(Mplayer_EndOfStream);
+            //Mplayer.Open("Sound\\astral projection - trance dance.mp3");
+            
+            //Mplayer.Play();
+            
+            // 21474836
+            //100000000
+            InitializeComponent();
+            rb_Middle.Checked = true;
+            M_Einstellungen = new Einstellungen();
+            a = new ArrayList();
+            geschoss = new ArrayList();
+            Einheiten = new ArrayList();
+            M_Spielfeld = new Spielfeld(M_Einstellungen);
+            M_PressedButtons = new ArrayList();
+            sound = new System.Media.SoundPlayer();
+            LoadSound();
+        }
+        public void LoadSound() 
+        {
+            Sounds=Directory.GetFiles("Sound");
+
+        }
+
+        void Mplayer_EndOfStream(int Result)
+        {
+            
+            //Mplayer.Play();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.Refresh();
+            label7.Text = M_Spielfeld.Lives.ToString();
+            label4.Text = M_Spielfeld.Money.ToString();
+            label5.Text = M_Spielfeld.Highscore.ToString();
+            label9.Text = M_Spielfeld.Level.ToString();
+            if (M_Spielfeld.Einheiten.Count>0)
+            {
+                label18.Text = ((Einheit)M_Spielfeld.Einheiten[M_Spielfeld.Einheiten.Count - 1]).Lebensenergie.ToString();
+            }
+            //p_test.Visible = false;
+            //p_test.Refresh();
+            //p_test.Visible = true;
+        }
+
+        private void p_test_Paint(object sender, PaintEventArgs e)
+        {
+            if (M_Spielfeld.Level == 200)
+            {
+                Startwave.Enabled = false;
+            }
+
+            M_Spielfeld.OnPaint(e.Graphics);
+            if(M_Spielfeld.Status!=string.Empty)
+            {
+                LAB_Level.Text = M_Spielfeld.Status;
+            }
+            if (M_SelectedTurm != null)
+            {
+                LAB_Reichweite.Text = M_SelectedTurm.Reichweite.Height.ToString();
+                LAB_Feuerrate.Text = M_SelectedTurm.Feuerrate.ToString();
+                LAB_Einheiten.Text = M_SelectedTurm.MaxEinheitToShoot.ToString();
+                LAB_UpgradeKosten.Text = M_SelectedTurm.UpgradeKosten.ToString();
+                LAB_Slowdown.Text = M_SelectedTurm.Geschoss.Slowdown.ToString();
+                LAB_Schaden.Text = M_SelectedTurm.Geschoss.Schaden.ToString();
+                LAB_MaxLevel.Text = M_SelectedTurm.MaxLevel.ToString();
+                LAB_Level.Text = M_SelectedTurm.Level.ToString();
+                LAB_Turmname.Text = M_SelectedTurm.Kosten.ToString();
+            }
+            else
+            {
+                LAB_Reichweite.Text = string.Empty;
+                LAB_Feuerrate.Text = string.Empty;
+                LAB_Einheiten.Text = string.Empty;
+                LAB_UpgradeKosten.Text = string.Empty;
+                LAB_Turmname.Text = string.Empty;
+                LAB_Schaden.Text = string.Empty;
+                LAB_Slowdown.Text = string.Empty;
+                LAB_Schaden.Text = string.Empty;
+                LAB_MaxLevel.Text = string.Empty;
+                LAB_Level.Text = string.Empty;
+                LAB_Turmname.Text = string.Empty; 
+            }
+            if (Mouserup == true ) 
+            {
+                if (painttower == true)
+                {
+                    Rectangle rect = new Rectangle(Mousepostion, new Size(20, 20));
+                    if (TurmClick() == null && MouseoverPfad(rect) == false)
+                    {
+
+                        e.Graphics.DrawRectangle(new Pen(Color.FromArgb(90, 0, 255, 0)), rect);
+                        e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(30, 0, 255, 0)), rect);
+                    }
+                    else
+                    {
+
+                        e.Graphics.DrawRectangle(new Pen(Color.FromArgb(90, 255, 0, 0)), rect);
+                        e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(30, 255, 0, 0)), rect);
+                    }
+                }
+            }
+            if (M_SelectedTurm != null) 
+            {
+                e.Graphics.DrawEllipse(new Pen(Color.FromArgb(90, 255, 0, 0)),M_SelectedTurm.Reichweite);
+            }
+
+           
+        }
+        public bool MouseoverPfad(Rectangle rect) 
+        {
+            bool Over = false;
+            for(int i=0;i<M_Spielfeld.Route.Count;i++)
+            {
+                if(rect.Contains(((Point)M_Spielfeld.Route[i])))
+                {
+                    Over=true;
+                }
+            }
+            return Over;
+
+        }
+        public void PlaySound() 
+        {
+            Random r = new Random();
+            int i=r.Next(Sounds.Length-1);
+            sound.SoundLocation =Sounds[i];
+            sound.Play();
+        }
+
+
+        public Turm TurmClick() 
+        {
+            Turm SelectedTurm=null;
+            for (int i = 0;i< M_Spielfeld.Türme.Count; i++) 
+            {
+                if (((Turm)M_Spielfeld.Türme[i]).Rechteck.Contains(Mousepostion)) 
+                {
+                    SelectedTurm = ((Turm)M_Spielfeld.Türme[i]);
+                    M_IndexofSelectedTurm = i;
+                    PlaySound();
+                }
+            }
+            return SelectedTurm;
+        }
+
+
+        private void p_test_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                painttower = false;
+                M_SelectedTurm = null;
+                LAB_Reichweite.Text = string.Empty;
+                LAB_Feuerrate.Text = string.Empty;
+                LAB_Einheiten.Text = string.Empty;
+                LAB_UpgradeKosten.Text = string.Empty;
+                LAB_Turmname.Text = string.Empty;
+                LAB_Schaden.Text = string.Empty;
+                LAB_Slowdown.Text = string.Empty;
+                LAB_MaxLevel.Text=string.Empty;
+                LAB_Level.Text = string.Empty;
+                LAB_Turmname.Text = string.Empty;
+            }
+
+            if (e.Button == MouseButtons.Left)
+            {
+                if (painttower == true)
+                {
+                    BuildTower();
+
+               
+               
+                }
+                else
+                {
+                    M_SelectedTurm = TurmClick();
+                    
+                }
+
+            }
+            //if (painttower == false)
+            //{
+            //    for (int i = 0; i < M_Spielfeld.Türme.Count; i++)
+            //    {
+            //        if (((Turm)M_Spielfeld.Türme[i]).TurmRect.Contains(e.Location))
+            //        {
+            //            label1.Text = ((Turm)M_Spielfeld.Türme[i]).Level.ToString();
+            //        }
+            //    }
+            //}
+            
+        }
+        public void SellTower() 
+        {
+            if (M_SelectedTurm!=null) 
+            {
+                M_Spielfeld.Money+= M_SelectedTurm.Kosten / 2;
+                M_Spielfeld.Türme.RemoveAt(M_IndexofSelectedTurm);
+                M_IndexofSelectedTurm = -1;
+                M_SelectedTurm = null;
+            }
+        }
+
+        public void BuildTower() 
+        {
+            Turm a=null;
+            switch(turm)
+            {
+                case 1:  a = new LaserTower1(M_Spielfeld, Mousepostion) ; break;
+                case 2: a = new LaserTower2(M_Spielfeld, Mousepostion); break;
+                case 3: a = new LaserTower3(M_Spielfeld, Mousepostion); break;
+                case 4: a = new UltimateLaserTower(M_Spielfeld, Mousepostion); break;
+                case 5: a = new SlowTower1(M_Spielfeld, Mousepostion); break;
+                case 6: a = new SlowTower2(M_Spielfeld, Mousepostion); break;
+                case 7: a = new SlowTower3(M_Spielfeld, Mousepostion); break;
+                case 8: a = new UltimateSlowTower(M_Spielfeld, Mousepostion); break;
+                case 9: a = new ProjetileTower1(M_Spielfeld, Mousepostion); break;
+                case 10: a = new ProjetileTower2(M_Spielfeld, Mousepostion); break;
+                case 11: a = new ProjetileTower3(M_Spielfeld, Mousepostion); break;
+                case 12: a = new UltimateProjektileTower1(M_Spielfeld, Mousepostion); break;
+
+            }
+            if (M_Spielfeld.Money >= a.Kosten)
+            {
+                M_Spielfeld.Türme.Add(a);
+                M_Spielfeld.Money -= a.Kosten;
+                painttower = false;
+            }
+
+            
+        }
+
+        private void btn_turm1_Click(object sender, EventArgs e)
+        {
+            
+            turm = 1;
+            painttower = true;
+        }
+
+        private void btn_turm2_Click(object sender, EventArgs e)
+        {
+            turm = 2;
+            painttower = true;
+        }
+
+        private void btn_turm3_Click(object sender, EventArgs e)
+        {
+            turm = 3;
+            painttower = true;
+        }
+
+
+        private void Startwave_Click(object sender, EventArgs e)
+        {
+            M_Spielfeld.StartWave();
+            if (M_Spielfeld.Level == 200)
+            {
+                Startwave.Enabled = false;
+            }
+        }
+
+        private void p_test_MouseUp(object sender, MouseEventArgs e)
+        {
+            Mouserup = true;
+        }
+
+        private void p_test_MouseLeave(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void p_test_MouseMove(object sender, MouseEventArgs e)
+        {
+            //Mousepostion = e.Location;
+            int X = e.Location.X / 20;
+            int Y = e.Location.Y / 20;
+            Mousepostion.X = X * 20;
+            Mousepostion.Y =Y*20; 
+            Mouserup = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(M_SelectedTurm!=null)
+            {
+                M_SelectedTurm.Upgrade();
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            turm = 4;
+            painttower = true;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            SellTower();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            turm = 5;
+            painttower = true;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            turm = 6;
+            painttower = true;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            turm = 7;
+            painttower = true;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            turm = 8;
+            painttower = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            turm = 9;
+            painttower = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            turm = 10;
+            painttower = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            turm = 11;
+            painttower = true;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            turm = 12;
+            painttower = true;
+        }
+
+        private void btn_turm2_MouseHover(object sender, EventArgs e)
+        {
+            M_SelectedTurm =new LaserTower2();
+            
+        }
+
+        private void btn_turm1_MouseHover(object sender, EventArgs e)
+        {
+            M_SelectedTurm = new LaserTower1();
+        }
+
+        private void btn_turm3_MouseHover(object sender, EventArgs e)
+        {
+            M_SelectedTurm = new LaserTower3();
+        }
+
+        private void button2_MouseHover(object sender, EventArgs e)
+        {
+            M_SelectedTurm = new ProjetileTower1();
+        }
+
+        private void button3_MouseHover(object sender, EventArgs e)
+        {
+            M_SelectedTurm = new ProjetileTower2();
+        }
+
+        private void button4_MouseHover(object sender, EventArgs e)
+        {
+            M_SelectedTurm = new ProjetileTower3();
+        }
+
+        private void button5_MouseHover(object sender, EventArgs e)
+        {
+            M_SelectedTurm = new SlowTower1();
+        }
+
+        private void button6_MouseHover(object sender, EventArgs e)
+        {
+            M_SelectedTurm = new SlowTower2();
+        }
+
+        private void button7_MouseHover(object sender, EventArgs e)
+        {
+            M_SelectedTurm = new SlowTower3();
+        }
+
+        private void button8_MouseHover(object sender, EventArgs e)
+        {
+            M_SelectedTurm = new UltimateLaserTower();
+        }
+
+        private void button9_MouseHover(object sender, EventArgs e)
+        {
+            M_SelectedTurm = new UltimateProjektileTower1();
+        }
+
+        private void button10_MouseHover(object sender, EventArgs e)
+        {
+            M_SelectedTurm = new UltimateSlowTower();
+        }
+
+        private void btn_turm1_MouseLeave(object sender, EventArgs e)
+        {
+            M_SelectedTurm = null;
+        }
+
+        private void btn_turm2_MouseLeave(object sender, EventArgs e)
+        {
+            M_SelectedTurm = null;
+        }
+
+        private void btn_turm3_MouseLeave(object sender, EventArgs e)
+        {
+            M_SelectedTurm = null;
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            M_SelectedTurm = null;
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            M_SelectedTurm = null;
+        }
+
+        private void button4_MouseLeave(object sender, EventArgs e)
+        {
+            M_SelectedTurm = null;
+        }
+
+        private void button5_MouseLeave(object sender, EventArgs e)
+        {
+            M_SelectedTurm = null;
+        }
+
+        private void button6_MouseLeave(object sender, EventArgs e)
+        {
+            M_SelectedTurm = null;
+        }
+
+        private void button7_MouseLeave(object sender, EventArgs e)
+        {
+            M_SelectedTurm = null;
+        }
+
+        private void button8_MouseLeave(object sender, EventArgs e)
+        {
+            M_SelectedTurm = null;
+        }
+
+        private void button9_MouseLeave(object sender, EventArgs e)
+        {
+            M_SelectedTurm = null;
+        }
+
+        private void button10_MouseLeave(object sender, EventArgs e)
+        {
+            M_SelectedTurm = null;
+        }
+
+        private void btn_Pause_Click(object sender, EventArgs e)
+        {
+            if (Pause)
+            {
+                Pause = false;
+                btn_Pause.Text = "Pause";
+                p_test.Enabled = true;
+            }
+            else
+            {
+                Pause = true;
+                btn_Pause.Text = "Fortsetzen";
+                p_test.Enabled = false;
+            }
+        }
+
+        private void btn_Starten_Click(object sender, EventArgs e)
+        {
+            gb_Menu.Visible = false;
+            gb_Spielfeld.Visible = true;
+            gb_Editor.Visible = false;
+            EditorFirstStart = false;
+        }
+
+        private void hauptmenüToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gb_Menu.Visible = true;
+            gb_Spielfeld.Visible = false;
+            gb_Editor.Visible = false;
+            EditorFirstStart = false;
+        }
+
+        private void beendenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.Close();
+        }
+
+        private void gb_Menu_Enter(object sender, EventArgs e)
+        {
+            if (lv_Background.Items.Count < 1)
+            {
+                for (int i = 0; i < il_Hintergruende.Images.Count; i++)
+                {
+                    ListViewItem lvi = new ListViewItem("Hintergrund " + Convert.ToString(i + 1), i);
+                    lv_Background.Items.Add(lvi);
+                }
+            }
+        }
+
+        private void lv_Background_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lv_Background.SelectedIndices.Count > 0)
+            {
+                p_test.BackgroundImage = il_Hintergruende.Images[lv_Background.SelectedIndices[0]];
+                p_test.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+        }
+
+        private void editorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gb_Menu.Visible = false;
+            gb_Spielfeld.Visible = false;
+            gb_Editor.Visible = true;
+            EditorFirstStart = true;
+        }
+
+        private void lv_HintergrundEditor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lv_HintergrundEditor.SelectedIndices.Count > 0)
+            {
+                p_Editor.BackgroundImage = il_Hintergruende.Images[lv_HintergrundEditor.SelectedIndices[0]];
+                p_Editor.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+        }
+
+        private void p_Editor_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                
+            }
+
+            if (e.Button == MouseButtons.Left)
+            {
+                M_EditorRoute.Add(e.Location);
+            }
+        }
+
+        private void p_Editor_Paint(object sender, PaintEventArgs e)
+        {
+            
+            if (M_EditorRoute.Count > 1)
+            {
+                Point[] points = new Point[M_EditorRoute.Count];
+
+                for (int i = 0; i < M_EditorRoute.Count; i++)
+                {
+                    points[i] = ((Point)M_EditorRoute[i]);
+                }
+
+                e.Graphics.DrawLines(new Pen(Color.Black, 40), points);//Route zeichenen
+            }
+        }
+
+        private void gb_Editor_Paint(object sender, PaintEventArgs e)
+        {
+            if (EditorFirstStart)
+            {
+                EditorFirstStart = false;
+                M_EditorRoute = new ArrayList();
+                if (lv_HintergrundEditor.Items.Count < 1)
+                {
+                    for (int i = 0; i < il_Hintergruende.Images.Count; i++)
+                    {
+                        ListViewItem lvi = new ListViewItem("Hintergrund " + Convert.ToString(i + 1), i);
+                        lv_HintergrundEditor.Items.Add(lvi);
+                    }
+                }
+            }
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 's')
+            {
+                if (M_Spielfeld.Level<200)
+                    M_Spielfeld.StartWave();
+            }
+            M_PressedButtons.Add(e.KeyChar);
+
+            if (M_SelectedTurm is UltimateLaserTower)
+            {
+                if (M_PressedButtons.Count > 7)
+                {
+                    int c = M_PressedButtons.Count;
+                    if ((char)M_PressedButtons[c - 1] == 'd' && (char)M_PressedButtons[c - 2] == 'o' && (char)M_PressedButtons[c - 3] == 'g' && (char)M_PressedButtons[c - 4] == 'r' && (char)M_PressedButtons[c - 5] == 'e' && (char)M_PressedButtons[c - 6] == 'w' && (char)M_PressedButtons[c - 7] == 'o' && (char)M_PressedButtons[c - 8] == 't')
+                    {
+                        M_SelectedTurm.MaxEinheitToShoot = 60;
+                        M_SelectedTurm.SchadenProGeschoss = 99999999;
+                        M_SelectedTurm.Reichweite = p_test.ClientRectangle;
+                    }
+                }
+            }
+        }
+    }
+}

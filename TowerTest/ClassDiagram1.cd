@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="TowerTest.Einheit" Collapsed="true">
+    <Position X="49" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Einheit\Einheit.cs</FileName>
+      <HashCode>AgDAIAgAQAAAwgAiIIgAAAQgQBgABCQgkISYAQcEICY=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Einstellungen" Collapsed="true">
+    <Position X="50.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Einstellungen.cs</FileName>
+      <HashCode>AAAAAAgABCAIAQAAICKAAAAkAAAAAABCAAAAAAAAAQI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Form1" Collapsed="true">
+    <Position X="52.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Form1.cs</FileName>
+      <HashCode>/yysBY4USekw0hOXE/ObsQnLhMy/+YK/xnh/EDQSxLI=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Geschoss" Collapsed="true">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Geschoss.cs</FileName>
+      <HashCode>MACAIAgEAQAAgAggAEAAAAABAAAAAAQIAAAAAAAAACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Laserstrahl" Collapsed="true">
+    <Position X="16" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Laser\Laserstrahl.cs</FileName>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Projektile1" Collapsed="true">
+    <Position X="44.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Projektile\Projektile1.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Projektile2" Collapsed="true">
+    <Position X="46.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Projektile\Projektile2.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Projektile3" Collapsed="true">
+    <Position X="33" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Projektile\Projektile3.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Projektile4" Collapsed="true">
+    <Position X="35.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Projektile\Projektile4.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Projektile5" Collapsed="true">
+    <Position X="37.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Projektile\Projektile5.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Projektile6" Collapsed="true">
+    <Position X="39.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Projektile\Projektile6.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Projektile7" Collapsed="true">
+    <Position X="42" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Projektile\Projektile7.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Projektilegeschoss" Collapsed="true">
+    <Position X="39.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Projektile\Projektilegeschoss.cs</FileName>
+      <HashCode>EACAAIAAAAAAAAAAAAAAAAAAQIAAAAAAAIAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Highscore" Collapsed="true">
+    <Position X="49" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Highscore.cs</FileName>
+      <HashCode>AAAAECAAAEAAwAAAAAhAAAAAAACAAAAAoCAAAQAAgAA=</HashCode>
+    </TypeIdentifier>
+    <NestedTypes>
+      <Enum Name="TowerTest.Highscore.Schwierigkeitsgrad" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Highscore.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Class Name="TowerTest.Highscore.ListofHighscore" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Highscore.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="TowerTest.Highscore.Einfach" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Highscore.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="TowerTest.Highscore.Mittel" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Highscore.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="TowerTest.Highscore.Schwer" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Highscore.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+  </Class>
+  <Class Name="TowerTest.Program" Collapsed="true">
+    <Position X="50.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Program.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Spielfeld" Collapsed="true">
+    <Position X="50.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Spielfeld.cs</FileName>
+      <HashCode>AACwAAAMRAABAAICAEAEBYAAAACAAQBDAAQIADgAACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.LaserTower1" Collapsed="true">
+    <Position X="7.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Türme\LaserTower1.cs</FileName>
+      <HashCode>AACAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.LaserTower2" Collapsed="true">
+    <Position X="11.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Türme\LaserTower2.cs</FileName>
+      <HashCode>AACAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.LaserTower3" Collapsed="true">
+    <Position X="16.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Türme\LaserTower3.cs</FileName>
+      <HashCode>AACAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.ProjetileTower1" Collapsed="true">
+    <Position X="18.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Türme\ProjektileTower1.cs</FileName>
+      <HashCode>AACAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.ProjetileTower2" Collapsed="true">
+    <Position X="23" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Türme\ProjektileTower2.cs</FileName>
+      <HashCode>AACAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.ProjetileTower3" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Türme\ProjektileTower3.cs</FileName>
+      <HashCode>AACAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.SlowTower1" Collapsed="true">
+    <Position X="5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Türme\SlowTower1.cs</FileName>
+      <HashCode>AACAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.SlowTower2" Collapsed="true">
+    <Position X="9.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Türme\SlowTower2.cs</FileName>
+      <HashCode>AACAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.SlowTower3" Collapsed="true">
+    <Position X="14" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Türme\SlowTower3.cs</FileName>
+      <HashCode>AACAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Turm" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Türme\Turm.cs</FileName>
+      <HashCode>gACAJIACCAIBhABAASAgEIACADggBAIhKICCAAAEGEA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.UltimateLaserTower" Collapsed="true">
+    <Position X="20.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Türme\UltimateLaserTower1.cs</FileName>
+      <HashCode>AACAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.UltimateProjektileTower1" Collapsed="true">
+    <Position X="25.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Türme\UltimateProjektileTower1.cs</FileName>
+      <HashCode>AACAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.UltimateSlowTower" Collapsed="true">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Türme\UltimateSlowTower.cs</FileName>
+      <HashCode>AACAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Welle" Collapsed="true">
+    <Position X="52.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Welle.cs</FileName>
+      <HashCode>AAAAACACCIABAAAACAAAAAAggAAAAQABCAAAAAAAACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Laser.DamageLaser1" Collapsed="true">
+    <Position X="10.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Laser\DamageLaser1.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Laser.DamageLaser2" Collapsed="true">
+    <Position X="15" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Laser\DamageLaser2.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Laser.DamageLaser3" Collapsed="true">
+    <Position X="19.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Laser\DamageLaser3.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Laser.DamageLaser4" Collapsed="true">
+    <Position X="24" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Laser\DamageLaser4.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Laser.DamageLaser5" Collapsed="true">
+    <Position X="28.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Laser\DamageLaser5.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Laser.DamageLaser6" Collapsed="true">
+    <Position X="1.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Laser\DamageLaser6.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Laser.DamageLaser7" Collapsed="true">
+    <Position X="6" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Laser\DamageLaser7.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Laser.SlowLaser1" Collapsed="true">
+    <Position X="12.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Laser\SlowLaser1.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Laser.SlowLaser2" Collapsed="true">
+    <Position X="17.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Laser\SlowLaser2.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Laser.SlowLaser3" Collapsed="true">
+    <Position X="21.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Laser\SlowLaser3.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Laser.SlowLaser4" Collapsed="true">
+    <Position X="26.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Laser\SlowLaser4.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Laser.SlowLaser5" Collapsed="true">
+    <Position X="30.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Laser\SlowLaser5.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Laser.SlowLaser6" Collapsed="true">
+    <Position X="3.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Laser\SlowLaser6.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Laser.SlowLaser7" Collapsed="true">
+    <Position X="8.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Geschoss\Laser\SlowLaser7.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Properties.Resources" Collapsed="true">
+    <Position X="52.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAgAAgAQAAAAgIAIQAREgAAAQAgAAAAACAIAAAAIIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerTest.Properties.Settings" Collapsed="true">
+    <Position X="49" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+</ClassDiagram>
